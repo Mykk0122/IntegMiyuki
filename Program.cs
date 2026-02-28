@@ -39,13 +39,14 @@
 
         static void AddOrUpdateEmployeeStatus()
         {
-            Console.Write("\n Enter Employee Name: ");
+            Console.Write("\n Enter Employee Name:  ");
             string name = Console.ReadLine();
-            Console.Write(" Enter Employee Status: ");
-            Console.Write("\n Hired ");
-            Console.Write("\n Promoted ");
-            Console.Write("\n Moving  ");
-            Console.Write("\n Removed");
+            Console.WriteLine("\n Enter Employee Status:  ");
+            Console.WriteLine(" Hired ");
+            Console.WriteLine(" Promoted ");
+            Console.WriteLine(" Moving  ");
+            Console.WriteLine(" Removed");
+            Console.Write("Please Select: ");
             string status = Console.ReadLine();
 
             Console.WriteLine($"\n Employee '{name}' status updated to '{status}'.");
@@ -56,7 +57,7 @@
             {
                 Console.Write("\n Enter employee name");
                 {
-
+                   Console.WriteLine();
                 }
                 Console.WriteLine("\n Press any key to return to the main menu...");
                 Console.ReadKey();
