@@ -68,7 +68,8 @@
             {
                 Console.Write("\n Enter employee name");
                 string name = Console.ReadLine();
-                Console.WriteLine($"\n Employee '{name}' is Currently 'status'.");
+            
+            Console.WriteLine($"\n Employee '{name}' is Currently .");
                 
                 Console.WriteLine("\n Press any key to return to the main menu...");
                 Console.ReadKey();
