@@ -23,7 +23,7 @@
                         AddOrUpdateEmployeeStatus();
                         break;
                     case "2":
-
+                        ViewEmployeeStatus();
                         break;
                     case "3":
                         running = false;
@@ -50,24 +50,35 @@
             string status = Console.ReadLine();
 
             Console.WriteLine($"\n Employee '{name}' status updated to '{status}'.");
+            string choice = Console.ReadLine();
+            string statusEm = choice switch
+            {
+                "1" => "Hired",
+                "2" => "Promoted",
+                "3" => "Moving",
+                "4" => "removed",
+                _ => "Unknown"
+            };
+            Console.Write("Enter Status of Employee: ");
+            string details = Console.ReadLine();
 
 
-
-            static void ViewEmployeeStatus()
+        }
+        static void ViewEmployeeStatus()
             {
                 Console.Write("\n Enter employee name");
-                {
-                   Console.WriteLine();
-                }
+                string name = Console.ReadLine();
+                Console.WriteLine($"\n Employee '{name}' is Currently 'status'.");
+                
                 Console.WriteLine("\n Press any key to return to the main menu...");
                 Console.ReadKey();
-                string name = Console.ReadLine();
+               
 
 
             }
         }
     }
-}
+
 
 
 
