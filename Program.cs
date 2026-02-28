@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-      
+
         static void Main(string[] args)
         {
             bool running = true;
@@ -23,7 +23,7 @@
                         AddOrUpdateEmployeeStatus();
                         break;
                     case "2":
-                        ViewEmployeeStatus();
+
                         break;
                     case "3":
                         running = false;
@@ -41,34 +41,32 @@
         {
             Console.Write("\n Enter Employee Name: ");
             string name = Console.ReadLine();
-            Console.Write(" Enter Employee Status (Active/Inactive): ");
+            Console.Write(" Enter Employee Status: ");
+            Console.Write("\n Hired ");
+            Console.Write("\n Promoted ");
+            Console.Write("\n Moving  ");
+            Console.Write("\n Removed");
             string status = Console.ReadLine();
 
             Console.WriteLine($"\n Employee '{name}' status updated to '{status}'.");
-            Console.WriteLine(" Press any key to return to the main menu...");
-            Console.ReadKey();
-            string choice = Console.ReadLine();
-            string statusEm = choice switch
-            {
-                "1" => "Active",
-                "2" => "Inactive",
-                _ => "Unknown"
-            };
-            Console.Write("Enter Status of Employee: ");
-            string details = Console.ReadLine();
 
-        }
 
-        static void ViewEmployeeStatus()
-        {
-            Console.Write("\n Enter employee name");
+
+            static void ViewEmployeeStatus()
             {
+                Console.Write("\n Enter employee name");
+                {
+
+                }
+                Console.WriteLine("\n Press any key to return to the main menu...");
+                Console.ReadKey();
+                string name = Console.ReadLine();
+
 
             }
-            Console.WriteLine("\n Press any key to return to the main menu...");
-            Console.ReadKey();
         }
     }
-
 }
+
+
 
