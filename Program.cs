@@ -18,7 +18,7 @@ namespace IntegMiyuki
                 Console.WriteLine("1. Add/Update Employee Status");
                 Console.WriteLine("2. View Employee Status");
                 Console.WriteLine("3. Exit");
-                Console.Write("\n Please select an option (1-3):");
+                Console.Write("\n Please select an option (1-3):  ");
                 string input = Console.ReadLine();
 
                 switch (input)
@@ -62,12 +62,12 @@ namespace IntegMiyuki
                 _ => "Unknown"
             };
 
-            Console.Write("Enter Details (e.g., Senior, New, Retired): ");
+            Console.Write("Enter Details (e.g., Senior, New, Retired):   ");
             string details = Console.ReadLine();
 
             manager.AddRecord(name, statusEm, details);
 
-            Console.WriteLine("\nSuccess: {name} recorded as '{statusEm}'.");
+            Console.WriteLine($"\nSuccess: {name} recorded as '{statusEm}'.");
             Console.ReadKey();
         }
         static void ViewEmployeeStatus()
