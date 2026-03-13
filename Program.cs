@@ -30,7 +30,7 @@ namespace IntegMiyuki
             Console.WriteLine("Status: \n1.Hired \n2.Promoted \n3.Moving \n4.Removed");
             string sChoice = Console.ReadLine();
 
-            Console.WriteLine("Type: \n1.New \n2.Senior \n3.Retired");
+            Console.WriteLine("Position: \n1.New \n2.Senior \n3.Retired");
             string dChoice = Console.ReadLine();
 
             service.ProcessEmployee(name, sChoice, dChoice);
