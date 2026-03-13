@@ -11,9 +11,10 @@ namespace IntegMiyuki
         {
             while (true)
             {
+
                 Console.WriteLine("--- Employee Management System ---");
                 Console.WriteLine("1. Add/Update Employee\n2. View Employee\n3. Exit");
-                Console.Write("Enter Choice:  ");
+                Console.Write("Enter Choice: ");
                 string mainChoice = Console.ReadLine();
 
                 if (mainChoice == "1") AddEmployee();
@@ -27,8 +28,7 @@ namespace IntegMiyuki
             Console.Write("Enter Name: ");
             string name = Console.ReadLine();
 
-            Console.WriteLine("Status: \n1.Hired \n2.Promoted \n3.Moving \n4.Removed");
-            string sChoice = Console.ReadLine();
+         
 
             Console.WriteLine("Position: \n1.New \n2.Senior \n3.Retired");
             string dChoice = Console.ReadLine();
