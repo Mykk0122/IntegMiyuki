@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
+
 
 namespace IntegMiyuki
 {
@@ -67,7 +67,7 @@ namespace IntegMiyuki
 
             manager.AddRecord(name, statusEm, details);
 
-            Console.WriteLine($"\nSuccess: {name} recorded as '{statusEm}'.");
+            Console.WriteLine("\nSuccess: {name} recorded as '{statusEm}'.");
             Console.ReadKey();
         }
         static void ViewEmployeeStatus()
@@ -85,7 +85,7 @@ namespace IntegMiyuki
                 Console.WriteLine($"\nNo record found for employee '{name}'.");
             }
 
-            Console.WriteLine("\nPress any key to return to the main menu...");
+            Console.WriteLine($"\nPress any key to return to the main menu...");
             Console.ReadKey();
         }
     }
