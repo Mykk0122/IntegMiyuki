@@ -1,8 +1,12 @@
-﻿namespace IntegMiyuki
+﻿using System;
+using System.Collections.Generic;
+using System.Xml.Linq;
+
+namespace IntegMiyuki
 {
     internal class Program
     {
-
+        static EmployeeManager manager = new EmployeeManager();
         static void Main(string[] args)
         {
             bool running = true;
@@ -42,44 +46,49 @@
             Console.Write("\n Enter Employee Name:  ");
             string name = Console.ReadLine();
             Console.WriteLine("\n Enter Employee Status:  ");
-            Console.WriteLine(" Hired ");
-            Console.WriteLine(" Promoted ");
-            Console.WriteLine(" Moving  ");
-            Console.WriteLine(" Removed");
+            Console.WriteLine(" 1. Hired ");
+            Console.WriteLine(" 2. Promoted ");
+            Console.WriteLine(" 3. Moving  ");
+            Console.WriteLine(" 4. Removed");
             Console.Write("Please Select: ");
-            string status = Console.ReadLine();
-
-            Console.WriteLine($"\n Employee '{name}' status updated to '{status}'.");
             string choice = Console.ReadLine();
+
             string statusEm = choice switch
             {
                 "1" => "Hired",
                 "2" => "Promoted",
                 "3" => "Moving",
-                "4" => "removed",
+                "4" => "Removed",
                 _ => "Unknown"
             };
-            Console.Write("Enter Status of Employee: ");
+
+            Console.Write("Enter Details (e.g., Senior, New, Retired): ");
             string details = Console.ReadLine();
 
+            manager.AddRecord(name, statusEm, details);
 
+            Console.WriteLine($"\nSuccess: {name} recorded as '{statusEm}'.");
+            Console.ReadKey();
         }
         static void ViewEmployeeStatus()
+        {
+            Console.Write("\nEnter Employee Name: ");
+            string name = Console.ReadLine();
+
+            var record = manager.GetRecord(name);
+            if (record != null)
             {
-                Console.Write("\n Enter employee name");
-                string name = Console.ReadLine();
-            
-            Console.WriteLine($"\n Employee '{name}' is Currently .");
-                
-                Console.WriteLine("\n Press any key to return to the main menu...");
-                Console.ReadKey();
-               
-
-
+                Console.WriteLine($"\nEmployee '{name}' is currently '{record.Status}' ({record.Details}).");
             }
+            else
+            {
+                Console.WriteLine($"\nNo record found for employee '{name}'.");
+            }
+
+            Console.WriteLine("\nPress any key to return to the main menu...");
+            Console.ReadKey();
         }
     }
-
-
+}
 
 
