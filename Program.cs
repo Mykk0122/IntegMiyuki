@@ -13,6 +13,7 @@ namespace IntegMiyuki
             {
                 Console.WriteLine("--- Employee Management System ---");
                 Console.WriteLine("1. Add/Update Employee\n2. View Employee\n3. Exit");
+                Console.Write("Enter Choice:  ");
                 string mainChoice = Console.ReadLine();
 
                 if (mainChoice == "1") AddEmployee();
