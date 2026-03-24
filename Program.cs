@@ -11,7 +11,7 @@ namespace IntegMiyuki
         {
             while (true)
             {
-
+                Console.Clear();
                 Console.WriteLine("--- Employee Management System ---");
                 Console.WriteLine("1. Add/Update Employee\n2. View Employee\n3. Exit");
                 Console.Write("Enter Choice: ");
@@ -28,14 +28,16 @@ namespace IntegMiyuki
             Console.Write("Enter Name: ");
             string name = Console.ReadLine();
 
-         
+            Console.WriteLine("Status: \n1.Hired \n2.Promoted \n3.Moving \n4.Removed");
+            string sChoice = Console.ReadLine(); 
 
             Console.WriteLine("Position: \n1.New \n2.Senior \n3.Retired");
             string dChoice = Console.ReadLine();
 
+         
             service.ProcessEmployee(name, sChoice, dChoice);
 
-            Console.WriteLine("Saved! Press any key...");
+            Console.WriteLine("\nSaved successfully! Press any key...");
             Console.ReadKey();
         }
 
@@ -46,9 +48,9 @@ namespace IntegMiyuki
             var emp = service.FetchEmployee(name);
 
             if (emp != null)
-                Console.WriteLine($"Found: {emp.Name} | {emp.Status} | {emp.Details}");
+                Console.WriteLine($"\nFound: {emp.Name} | {emp.Status} | {emp.Details}");
             else
-                Console.WriteLine("Employee not found.");
+                Console.WriteLine("\nEmployee not found.");
 
             Console.ReadKey();
         }
