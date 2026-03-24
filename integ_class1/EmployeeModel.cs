@@ -2,8 +2,8 @@
 {
     public class EmployeeModel
     {
-        public string Name { get; set; }
-        public string Status { get; set; }
-        public string Details { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
+        public string Details { get; set; } = string.Empty;
     }
 }

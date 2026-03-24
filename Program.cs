@@ -6,7 +6,7 @@ namespace IntegMiyuki
     internal class Program
     {
         static AppService service = new AppService();
-
+        bool running = true;
         static void Main(string[] args)
         {
             while (true)

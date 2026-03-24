@@ -9,36 +9,41 @@ namespace integ_class2
 {
     public class DataService
     {
-        private string jsonPath = "data.json";
+        private string _jsonFileName = "data.json";
 
         public List<EmployeeModel> GetAllFromJson()
         {
-            if (!File.Exists(jsonPath)) return new List<EmployeeModel>();
+            if (!File.Exists(_jsonFileName)) return new List<EmployeeModel>();
 
-            string json = File.ReadAllText(jsonPath);
-         
-            if (string.IsNullOrWhiteSpace(json)) return new List<EmployeeModel>();
-
-            return JsonSerializer.Deserialize<List<EmployeeModel>>(json) ?? new List<EmployeeModel>();
+            using (var inputStream = File.OpenRead(_jsonFileName))
+            {
+                if (inputStream.Length == 0) return new List<EmployeeModel>();
+                return JsonSerializer.Deserialize<List<EmployeeModel>>(inputStream) ?? new List<EmployeeModel>();
+            }
         }
-
 
         public void SaveToJSON(EmployeeModel data)
         {
-            var allEmployees = GetAllFromJson();
+            var accounts = GetAllFromJson();
 
 
-            var existing = allEmployees.FirstOrDefault(e => e.Name == data.Name);
-            if (existing != null) allEmployees.Remove(existing);
+            var existing = accounts.FirstOrDefault(e => e.Name == data.Name);
+            if (existing != null) accounts.Remove(existing);
 
-            allEmployees.Add(data);
+            accounts.Add(data);
 
-            string json = JsonSerializer.Serialize(allEmployees, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(jsonPath, json);
+            using (var outputStream = File.Create(_jsonFileName))
+            {
+                using (var writer = new Utf8JsonWriter(outputStream, new JsonWriterOptions { SkipValidation = true, Indented = true }))
+                {
+                    JsonSerializer.Serialize<List<EmployeeModel>>(writer, accounts);
+                }
+            }
         }
 
         public void SaveToDatabase(EmployeeModel data)
         {
+
             Console.WriteLine("Database Save Triggered (Simulated)");
         }
     }
