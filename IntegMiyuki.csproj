@@ -9,10 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\integ_class1\integ_class1.csproj" />
-<<<<<<< Updated upstream
     <ProjectReference Include="..\integ_class2\integ_class2.csproj" />
-=======
->>>>>>> Stashed changes
     <ProjectReference Include="..\integ_class3\integ_class3.csproj" />
   </ItemGroup>
 
