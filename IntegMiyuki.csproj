@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\integ_class1\integ_class1.csproj" />
-    <ProjectReference Include="..\integ_class2\integ_class2.csproj" />
-    <ProjectReference Include="..\integ_class3\integ_class3.csproj" />
-  </ItemGroup>
-
 </Project>
