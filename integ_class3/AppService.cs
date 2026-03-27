@@ -1,7 +1,8 @@
-﻿using integ_class1;
-using integ_class2;
-using IntegMiyuki.integ_class2;
+﻿using System;
+using System.Linq; 
 using System.Collections.Generic;
+using integ_class1;
+using integ_class2;
 
 namespace integ_class3
 {
@@ -9,8 +10,6 @@ namespace integ_class3
     {
         
         private IEmployeeData _dataLogic = new AccountJsonData();
-
-       
 
         public void ProcessEmployee(string name, string sChoice, string dChoice)
         {
@@ -20,6 +19,14 @@ namespace integ_class3
             var emp = new EmployeeModel { Name = name, Status = status, Details = details };
 
             _dataLogic.Save(emp);
+        }
+
+        
+        public EmployeeModel? FetchEmployee(string name)
+        {
+     
+            return _dataLogic.GetAll()
+                .FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
         public List<EmployeeModel> GetList()
