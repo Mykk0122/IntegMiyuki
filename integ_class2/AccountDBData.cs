@@ -1,23 +1,23 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient; 
 using integ_class1;
 
 namespace integ_class2
 {
     public class AccountDBData : IEmployeeData
     {
-       
-        private string _connStr = "server=localhost;database=emp_db;user=root;password=yourpassword";
+
+        private string _connStr = @"Server=(localdb)\MSSQLLocalDB;Database=emp_db;Trusted_Connection=True;Encrypt=False;";
 
         public void Save(EmployeeModel data)
         {
-            using (var conn = new MySqlConnection(_connStr))
+            using (var conn = new SqlConnection(_connStr))
             {
-                string query = "INSERT INTO employees (name, status, details) VALUES (@n, @s, @d) " +
-                               "ON DUPLICATE KEY UPDATE status=@s, details=@d";
+                string query = "IF EXISTS (SELECT 1 FROM employees WHERE name = @n) " +
+                               "UPDATE employees SET status = @s, details = @d WHERE name = @n " +
+                               "ELSE INSERT INTO employees (name, status, details) VALUES (@n, @s, @d)";
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@n", data.Name);
                 cmd.Parameters.AddWithValue("@s", data.Status);
                 cmd.Parameters.AddWithValue("@d", data.Details);
@@ -30,12 +30,10 @@ namespace integ_class2
         public List<EmployeeModel> GetAll()
         {
             var list = new List<EmployeeModel>();
-
-            using (var conn = new MySqlConnection(_connStr))
+            using (var conn = new SqlConnection(_connStr))
             {
                 string query = "SELECT name, status, details FROM employees";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
+                SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -43,9 +41,9 @@ namespace integ_class2
                     {
                         list.Add(new EmployeeModel
                         {
-                            Name = reader.GetString("name"),
-                            Status = reader.GetString("status"),
-                            Details = reader.GetString("details")
+                            Name = reader["name"].ToString(),
+                            Status = reader["status"].ToString(),
+                            Details = reader["details"].ToString()
                         });
                     }
                 }

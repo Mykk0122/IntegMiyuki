@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq; 
+using System.Linq;
 using System.Collections.Generic;
 using integ_class1;
 using integ_class2;
@@ -9,7 +9,8 @@ namespace integ_class3
     public class AppService
     {
         
-        private IEmployeeData _dataLogic = new AccountJsonData();
+        private IEmployeeData _dbLogic = new AccountDBData();
+        private IEmployeeData _jsonLogic = new AccountJsonData();
 
         public void ProcessEmployee(string name, string sChoice, string dChoice)
         {
@@ -18,20 +19,23 @@ namespace integ_class3
 
             var emp = new EmployeeModel { Name = name, Status = status, Details = details };
 
-            _dataLogic.Save(emp);
+         
+            _dbLogic.Save(emp);
+            _jsonLogic.Save(emp);
+
+            Console.WriteLine("\n[System] Successfully synced to SQL Server and local JSON file.");
         }
 
-        
         public EmployeeModel? FetchEmployee(string name)
         {
-     
-            return _dataLogic.GetAll()
+            return _dbLogic.GetAll()
                 .FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
         public List<EmployeeModel> GetList()
         {
-            return _dataLogic.GetAll();
+            // Usually, we return the Database list as the primary source
+            return _dbLogic.GetAll();
         }
     }
 }

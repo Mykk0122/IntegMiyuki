@@ -13,9 +13,10 @@ namespace IntegMiyuki
             {
                 Console.Clear();
                 Console.WriteLine("--- Employee Management System ---");
-                Console.WriteLine("1. Add/Update Employee\n2. View Employee\n3. Exit");
+                Console.WriteLine("[1.] Add/Update Employee\n[2.] View Employee\n[3.] Exit");
                 Console.Write("Enter Choice: ");
                 string mainChoice = Console.ReadLine();
+                Console.WriteLine("--------------------");
 
                 if (mainChoice == "1") AddEmployee();
                 else if (mainChoice == "2") ViewEmployee();
@@ -27,14 +28,21 @@ namespace IntegMiyuki
         {
             Console.Write("Enter Name: ");
             string name = Console.ReadLine();
+            Console.WriteLine("--------------------");
 
-            Console.WriteLine("Status: \n1.Hired \n2.Promoted \n3.Moving \n4.Removed");
-            string sChoice = Console.ReadLine(); 
+            Console.WriteLine("Status: \n[1.]Hired \n[2.]Promoted \n[3.]Moving \n[4.]Removed");
+            Console.Write("Enter Choice: ");
+          
+            string sChoice = Console.ReadLine();
 
-            Console.WriteLine("Position: \n1.New \n2.Senior \n3.Retired");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Position: \n[1.]New \n[2.]Senior \n[3.]Retired");
+          
+            Console.Write("Enter Choice: ");
             string dChoice = Console.ReadLine();
+          
 
-         
+
             service.ProcessEmployee(name, sChoice, dChoice);
 
             Console.WriteLine("\nSaved successfully! Press any key...");
