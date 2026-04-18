@@ -6,12 +6,11 @@ namespace integ_class2
 {
     public class AccountDBData : IEmployeeData
     {
-
         private string _connStr = @"Server=(localdb)\MSSQLLocalDB;Database=emp_db;Trusted_Connection=True;Encrypt=False;";
 
         public void Save(EmployeeModel data)
         {
-            using (var conn = new SqlConnection(_connStr))
+            using (SqlConnection conn = new SqlConnection(_connStr))
             {
                 string query = "IF EXISTS (SELECT 1 FROM employees WHERE name = @n) " +
                                "UPDATE employees SET status = @s, details = @d WHERE name = @n " +
@@ -49,6 +48,19 @@ namespace integ_class2
                 }
             }
             return list;
+        }
+
+        public void Delete(string name)
+        {
+            using (SqlConnection conn = new SqlConnection(_connStr))
+            {
+                string query = "DELETE FROM employees WHERE name = @n";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@n", name);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

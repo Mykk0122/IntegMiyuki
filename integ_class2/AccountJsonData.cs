@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace integ_class2
 
         public List<EmployeeModel> GetAll()
         {
-            if (!File.Exists(_path) || new FileInfo(_path).Length == 0) 
+            if (!File.Exists(_path) || new FileInfo(_path).Length == 0)
                 return new List<EmployeeModel>();
 
             using (var stream = File.OpenRead(_path))
@@ -25,9 +26,28 @@ namespace integ_class2
         {
             var accounts = GetAll();
             var existing = accounts.FirstOrDefault(e => e.Name == data.Name);
-            if (existing != null) accounts.Remove(existing);
-            accounts.Add(data);
 
+            if (existing != null) accounts.Remove(existing);
+
+            accounts.Add(data);
+            SaveToFile(accounts);
+        }
+
+        public void Delete(string name)
+        {
+            var list = GetAll();
+            var itemToRemove = list.FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if (itemToRemove != null)
+            {
+                list.Remove(itemToRemove);
+                SaveToFile(list); 
+            }
+        }
+
+       
+        private void SaveToFile(List<EmployeeModel> accounts)
+        {
             using (var outputStream = File.Create(_path))
             {
                 using (var writer = new Utf8JsonWriter(outputStream, new JsonWriterOptions { Indented = true }))

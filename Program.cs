@@ -6,46 +6,48 @@ namespace IntegMiyuki
     internal class Program
     {
         static AppService service = new AppService();
-        bool running = true;
+
         static void Main(string[] args)
         {
             while (true)
             {
                 Console.Clear();
                 Console.WriteLine("--- Employee Management System ---");
-                Console.WriteLine("[1.] Add/Update Employee\n[2.] View Employee\n[3.] Exit");
+                Console.WriteLine("[1.] Add Employee");
+                Console.WriteLine("[2.] Update Employee");
+                Console.WriteLine("[3.] Delete Employee");
+                Console.WriteLine("[4.] Search Employee");
+                Console.WriteLine("[5.] Exit");
                 Console.WriteLine("--------------------");
                 Console.Write("Enter Choice: ");
                 string mainChoice = Console.ReadLine();
                 Console.WriteLine("--------------------");
-                if (mainChoice == "1") AddEmployee();
-                else if (mainChoice == "2") ViewEmployee();
-                else if (mainChoice == "3") break;
+
+                if (mainChoice == "1" || mainChoice == "2" || mainChoice == "3")
+                    HandleEmployeeAction(mainChoice);
+                else if (mainChoice == "4")
+                    ViewEmployee();
+                else if (mainChoice == "5")
+                    break;
             }
         }
 
-        static void AddEmployee()
+        static void HandleEmployeeAction(string actionChoice)
         {
             Console.Write("Enter Name: ");
             string name = Console.ReadLine();
-            Console.WriteLine("--------------------");
+            string dChoice = "0";
 
-            Console.WriteLine("Status: \n[1.]Hired \n[2.]Promoted \n[3.]Moving \n[4.]Removed");
-            Console.Write("Enter Choice: ");
-          
-            string sChoice = Console.ReadLine();
+            if (actionChoice != "3")
+            {
+                Console.WriteLine("--------------------");
+                Console.WriteLine("Position: \n[1.] New \n[2.] Senior \n[3.] Retired");
+                Console.Write("Enter Choice: ");
+                dChoice = Console.ReadLine();
+            }
 
-            Console.WriteLine("--------------------");
-            Console.WriteLine("Position: \n[1.]New \n[2.]Senior \n[3.]Retired");
-          
-            Console.Write("Enter Choice: ");
-            string dChoice = Console.ReadLine();
-          
-
-
-            service.ProcessEmployee(name, sChoice, dChoice);
-
-            Console.WriteLine("\nSaved successfully! Press any key...");
+            service.ProcessEmployee(name, actionChoice, dChoice);
+            Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
 
