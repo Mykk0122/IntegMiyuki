@@ -13,13 +13,15 @@ namespace integ_class2
             using (SqlConnection conn = new SqlConnection(_connStr))
             {
                 string query = "IF EXISTS (SELECT 1 FROM employees WHERE name = @n) " +
-                               "UPDATE employees SET status = @s, details = @d WHERE name = @n " +
-                               "ELSE INSERT INTO employees (name, status, details) VALUES (@n, @s, @d)";
+                               "UPDATE employees SET status = @s, details = @d, salary = @sal, department = @dept WHERE name = @n " +
+                               "ELSE INSERT INTO employees (name, status, details, salary, department) VALUES (@n, @s, @d, @sal, @dept)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@n", data.Name);
                 cmd.Parameters.AddWithValue("@s", data.Status);
                 cmd.Parameters.AddWithValue("@d", data.Details);
+                cmd.Parameters.AddWithValue("@sal", data.Salary);
+                cmd.Parameters.AddWithValue("@dept", data.Department);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -31,7 +33,7 @@ namespace integ_class2
             var list = new List<EmployeeModel>();
             using (var conn = new SqlConnection(_connStr))
             {
-                string query = "SELECT name, status, details FROM employees";
+                string query = "SELECT name, status, details, salary, department FROM employees";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
@@ -40,9 +42,11 @@ namespace integ_class2
                     {
                         list.Add(new EmployeeModel
                         {
-                            Name = reader["name"].ToString(),
-                            Status = reader["status"].ToString(),
-                            Details = reader["details"].ToString()
+                            Name = reader["name"].ToString() ?? string.Empty,
+                            Status = reader["status"].ToString() ?? string.Empty,
+                            Details = reader["details"].ToString() ?? string.Empty,
+                            Salary = reader["salary"] != DBNull.Value ? Convert.ToDecimal(reader["salary"]) : 0,
+                            Department = reader["department"].ToString() ?? string.Empty
                         });
                     }
                 }

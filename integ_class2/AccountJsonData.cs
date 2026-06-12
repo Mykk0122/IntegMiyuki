@@ -15,7 +15,6 @@ namespace integ_class2
         {
             if (!File.Exists(_path) || new FileInfo(_path).Length == 0)
                 return new List<EmployeeModel>();
-
             using (var stream = File.OpenRead(_path))
             {
                 return JsonSerializer.Deserialize<List<EmployeeModel>>(stream) ?? new List<EmployeeModel>();
@@ -25,9 +24,11 @@ namespace integ_class2
         public void Save(EmployeeModel data)
         {
             var accounts = GetAll();
-            var existing = accounts.FirstOrDefault(e => e.Name == data.Name);
 
-            if (existing != null) accounts.Remove(existing);
+            var existing = accounts.FirstOrDefault(e => e.Name.Equals(data.Name, StringComparison.OrdinalIgnoreCase));
+
+            if (existing != null)
+                accounts.Remove(existing);
 
             accounts.Add(data);
             SaveToFile(accounts);
@@ -41,11 +42,10 @@ namespace integ_class2
             if (itemToRemove != null)
             {
                 list.Remove(itemToRemove);
-                SaveToFile(list); 
+                SaveToFile(list);
             }
         }
 
-       
         private void SaveToFile(List<EmployeeModel> accounts)
         {
             using (var outputStream = File.Create(_path))

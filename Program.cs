@@ -36,7 +36,10 @@ namespace IntegMiyuki
         {
             Console.Write("Enter Name: ");
             string name = Console.ReadLine();
+
             string dChoice = "0";
+            string department = string.Empty;
+            decimal salary = 0;
 
             if (actionChoice != "3")
             {
@@ -44,9 +47,19 @@ namespace IntegMiyuki
                 Console.WriteLine("Position: \n[1.] New \n[2.] Senior \n[3.] Retired");
                 Console.Write("Enter Choice: ");
                 dChoice = Console.ReadLine();
+
+                Console.WriteLine("--------------------");
+                Console.Write("Enter Department: ");
+                department = Console.ReadLine() ?? string.Empty;
+
+                Console.Write("Enter Salary: ");
+                if (!decimal.TryParse(Console.ReadLine(), out salary))
+                {
+                    salary = 0; 
+                }
             }
 
-            service.ProcessEmployee(name, actionChoice, dChoice);
+            service.ProcessEmployee(name, actionChoice, dChoice, salary, department);
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
@@ -58,9 +71,16 @@ namespace IntegMiyuki
             var emp = service.FetchEmployee(name);
 
             if (emp != null)
-                Console.WriteLine($"\nFound: {emp.Name} | {emp.Status} | {emp.Details}");
+            {
+                Console.WriteLine($"\nFound: {emp.Name}");
+                Console.WriteLine($"Status: {emp.Status} ({emp.Details})");
+                Console.WriteLine($"Department: {emp.Department}");
+                Console.WriteLine($"Salary: {emp.Salary:N2}");
+            }
             else
+            {
                 Console.WriteLine("\nEmployee not found.");
+            }
 
             Console.ReadKey();
         }

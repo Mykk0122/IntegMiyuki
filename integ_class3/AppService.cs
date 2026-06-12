@@ -11,9 +11,8 @@ namespace integ_class3
         private IEmployeeData _dbLogic = new AccountDBData();
         private IEmployeeData _jsonLogic = new AccountJsonData();
 
-        public void ProcessEmployee(string name, string sChoice, string dChoice)
+        public void ProcessEmployee(string name, string sChoice, string dChoice, decimal salary, string department)
         {
-         
             if (sChoice == "3")
             {
                 _dbLogic.Delete(name);
@@ -22,11 +21,11 @@ namespace integ_class3
                 return;
             }
 
-            
             string status = sChoice switch
             {
                 "1" => "Hired",
-                "2" => "Promoted", 
+                "2" => "Promoted",
+                _ => "Unknown" 
             };
 
             string details = dChoice switch
@@ -37,13 +36,19 @@ namespace integ_class3
                 _ => "General"
             };
 
-            var emp = new EmployeeModel { Name = name, Status = status, Details = details };
+            var emp = new EmployeeModel
+            {
+                Name = name,
+                Status = status,
+                Details = details,
+                Salary = salary,       // new imple to
+                Department = department // assign
+            };
 
-           
             _dbLogic.Save(emp);
             _jsonLogic.Save(emp);
 
-            Console.WriteLine($"\n[System] '{name}' successfully saved as {status} ({details}).");
+            Console.WriteLine($"\n[System] '{name}' successfully saved as {status} ({details}) in {department} with a salary of {salary:N2}.");
         }
 
         public EmployeeModel? FetchEmployee(string name)
