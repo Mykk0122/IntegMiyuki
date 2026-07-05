@@ -3,6 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using integ_class1;
 using integ_class2;
+using integ_class3;
+
 
 namespace integ_class3
 {
