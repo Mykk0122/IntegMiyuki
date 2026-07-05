@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IntegMiyuki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de901d55679db665dabb06d81fbcc9c2debbe222")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ddf51b595afc018d1063714a1bce936dfafe51b")]
 [assembly: System.Reflection.AssemblyProductAttribute("IntegMiyuki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IntegMiyuki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
