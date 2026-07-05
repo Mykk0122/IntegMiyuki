@@ -1,0 +1,21 @@
+﻿using integ_class3; 
+using System;
+using System.Xml.Linq;
+
+namespace IntegMiyuki
+{
+    internal class Program
+    {
+        static AppService service = new AppService();
+
+        static void Main(string[] args)
+        {
+           
+            Console.Write("Please Select (1-4): ");
+            string choice = Console.ReadLine();
+
+          
+            service.ProcessEmployee(name, choice, details);
+        }
+    }
+}

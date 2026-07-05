@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class2\\iemployeedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class2\\iemployeedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class2\\accountdbdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class2\\accountdbdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class3\\appservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class3\\appservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class2\\accountjsondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class2\\accountjsondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class2\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class2\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integ_class1\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integ_class1\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|c:\\users\\kiyum\\documents\\github\\integmiyuki\\integmiyuki.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{11544BCB-FDD3-435D-A598-BE09DC3B098E}|IntegMiyuki.csproj|solutionrelative:integmiyuki.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IEmployeeData.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\IEmployeeData.cs",
+              "RelativeDocumentMoniker": "integ_class2\\IEmployeeData.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\IEmployeeData.cs",
+              "RelativeToolTip": "integ_class2\\IEmployeeData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:11:47.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountDBData.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\AccountDBData.cs",
+              "RelativeDocumentMoniker": "integ_class2\\AccountDBData.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\AccountDBData.cs",
+              "RelativeToolTip": "integ_class2\\AccountDBData.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:14:36.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeModel.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class1\\EmployeeModel.cs",
+              "RelativeDocumentMoniker": "integ_class1\\EmployeeModel.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class1\\EmployeeModel.cs",
+              "RelativeToolTip": "integ_class1\\EmployeeModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:07:37.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class3\\AppService.cs",
+              "RelativeDocumentMoniker": "integ_class3\\AppService.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class3\\AppService.cs",
+              "RelativeToolTip": "integ_class3\\AppService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwCwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:06:12.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountJsonData.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\AccountJsonData.cs",
+              "RelativeDocumentMoniker": "integ_class2\\AccountJsonData.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\AccountJsonData.cs",
+              "RelativeToolTip": "integ_class2\\AccountJsonData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:13:10.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\DataService.cs",
+              "RelativeDocumentMoniker": "integ_class2\\DataService.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\integ_class2\\DataService.cs",
+              "RelativeToolTip": "integ_class2\\DataService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:07:27.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T15:29:27.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IntegMiyuki",
+              "DocumentMoniker": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\IntegMiyuki.csproj",
+              "RelativeDocumentMoniker": "IntegMiyuki.csproj",
+              "ToolTip": "C:\\Users\\Kiyum\\Documents\\GitHub\\IntegMiyuki\\IntegMiyuki.csproj",
+              "RelativeToolTip": "IntegMiyuki.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-24T18:06:06.25Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

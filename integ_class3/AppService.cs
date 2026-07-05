@@ -51,12 +51,14 @@ namespace integ_class3
             Console.WriteLine($"\n[System] '{name}' successfully saved as {status} ({details}) in {department} with a salary of {salary:N2}.");
         }
 
-        public EmployeeModel? FetchEmployee(string name)
-        {
-            return _dbLogic.GetAll()
-                .FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-        }
+      public EmployeeModel? FetchEmployee(string name)
+{
+    var allEmployees = _dbLogic.GetAll();
 
+    return allEmployees.FirstOrDefault(e => 
+        e.Name != null && e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+}
+x   
         public List<EmployeeModel> GetList()
         {
             return _dbLogic.GetAll();
