@@ -11,7 +11,6 @@ namespace integ_class3
         private IEmployeeData _dbLogic = new AccountDBData();
         private IEmployeeData _jsonLogic = new AccountJsonData();
 
-        // Single clean method to save/process employees
         public void ProcessEmployee(string name, string status, string details, decimal salary, string department)
         {
             var emp = new EmployeeModel
@@ -29,7 +28,7 @@ namespace integ_class3
             Console.WriteLine($"\n[System] '{name}' successfully saved as {status} ({details}).");
         }
 
-        // Dedicated method for deletion
+        
         public void DeleteEmployee(string name)
         {
             _dbLogic.Delete(name);

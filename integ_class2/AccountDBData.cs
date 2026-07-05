@@ -24,7 +24,9 @@ namespace integ_class2
                 cmd.Parameters.AddWithValue("@dept", data.Department);
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+             
+var pDept = new SqlParameter("@dept", SqlDbType.NVarChar, 50) { Value = (object)data.Department ?? DBNull.Value };
+cmd.Parameters.Add(pDept);cmd.ExecuteNonQuery();
             }
         }
 
